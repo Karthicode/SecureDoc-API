@@ -1,0 +1,16 @@
+[Unit]
+Description=main.js - making your environment variables rad
+Documentation=https://example.com
+After=network.target
+
+[Service]
+Environment=NODE_PORT=3001
+Type=simple
+StandardOutput=syslog
+StandardError=syslog
+User=ubuntu
+ExecStart=/usr/bin/node home/ubuntu/webapp/dist/main.js
+Restart=always
+RestartSec=10
+[Install]
+WantedBy=multi-user.target
